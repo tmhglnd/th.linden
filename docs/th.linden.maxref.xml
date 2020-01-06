@@ -8,7 +8,7 @@
 	</digest>
 
 	<description>
-		
+		Generate Lindenmayer System string expansions based on custom rules, axiom and number of generations. A powerful system for algorithmic composition! Rules are stored in a dictionary, and can be accessed from outside the abstraction, or can refer to an external dictionary. Rules are not split in characters, so spaces must be used! Numbers are kept intact as well.
 	</description>
 
 	<!--METADATA-->
@@ -42,39 +42,121 @@
 	</outletlist>
 
 	<!--ARGUMENTS-->
-	<!-- <objarglist>
-		<objarg name="threshold" optional="1" type="float">
+	<objarglist>
+		<objarg name="generations" optional="1" type="int">
 			<digest>
+				Set the initial number of generations. (default = 5)
 			</digest>
 			<description>
+				Set the initial number of generations. (default = 5)
 			</description>
 		</objarg>
-	</objarglist> -->
+		<objarg name="axiom" optional="1" type="symbol">
+			<digest>
+				Set the initial axiom. (default = 0)
+			</digest>
+			<description>
+				Set the initial axiom. (default = 0)
+			</description>
+		</objarg>
+	</objarglist>
 
 	<!--MESSAGES-->
 	<methodlist>
-		<method name="signal">
+		<method name="bang">
 			<arglist>
-				<arg name="signal" optional="0" type="signal" />
+				<arg name="bang" optional="1" type="bang" />
 			</arglist>
 			<digest>
 				Function depends on inlet.
 			</digest>
 			<description>
-				Inlet 0:
+				Inlet 0: Output the string expansion for the current settings.
 				<br />
 				<br />
-				Inlet 1:
+				Inlet 1: Nothing.
+			</description>
+		</method>
+		<method name="int">
+			<arglist>
+				<arg name="int" optional="1" type="int" />
+			</arglist>
+			<digest>
+				Function depends on inlet.
+			</digest>
+			<description>
+				Inlet 0: Set the amount of generations to generate and output.
+				<br />
+				<br />
+				Inlet 1: Set the axiom for the generation.
+			</description>
+		</method>
+		<method name="list">
+			<arglist>
+				<arg name="list" optional="1" type="int" />
+			</arglist>
+			<digest>
+				Set the amount of generations and the axiom as one list.
+			</digest>
+			<description>
+				Inlet 0: Set the amount of generations and the axiom as one list.
+				<br />
+				<br />
+				Inlet 1: Nothing
+			</description>
+		</method>
+		<method name="add">
+			<arglist>
+				<arg name="remove" optional="1" type="message" />
+			</arglist>
+			<digest>
+				Add a production rule to the dictionary.
+			</digest>
+			<description>
+				Inlet 0: Add a production rule to the rules dictionary. The rule is always a list of integers/floats/characters seperated by spaces. First item is the lookup-value, rest of list are the replacement rules.
+				<br />
+				<br />
+				Inlet 1: Nothing
+			</description>
+		</method>
+		<method name="remove">
+			<arglist>
+				<arg name="remove" optional="1" type="message" />
+			</arglist>
+			<digest>
+				Remove a production rule from the dictionary.
+			</digest>
+			<description>
+				Inlet 0: Remove a production rule from the dictionary based on the argument provided.
+				<br />
+				<br />
+				Inlet 1: Nothing
+			</description>
+		</method>
+		<method name="getdict">
+			<arglist>
+				<arg name="getdict" optional="1" type="message" />
+			</arglist>
+			<digest>
+				Output the dictionary of rules from the second outlet.
+			</digest>
+			<description>
+				Inlet 0: Output the dictionary of rules from the second outlet.
+				<br />
+				<br />
+				Inlet 1: Nothing
 			</description>
 		</method>
 	</methodlist>
 
 	<!--ATTRIBUTES-->
 	<attributelist>
-		<attribute name="thresh" get='0' set='1' type='float' size='2'>
+		<attribute name="dict" get='0' set='1' type='float' size='2'>
 			<digest>
+				Set a dictionary name to refer to as production rules.
 			</digest>
 			<description>
+				Set a dictionary name to refer to as production rules.
 				<br />
 				<br />
 			</description>

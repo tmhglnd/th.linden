@@ -20,41 +20,36 @@ var rules;
 
 function init(){
 	rules = new Dict(jsarguments[1]+"_rules");
-	axiom = "A";
+	axiom = "a";
 	gens = 1;
-
 
 	add(0, 0, 1);
 	add(1, 0);
 }
 init();
 
-function linden(a, v){
+function linden(g, a){
 	axiom = String(a);
-	post("axiom:", axiom, "\n");
+	generations = g;
 
-	generations = v;
-	post("generations:", generations, "\n");
-
-	var result = spawn(axiom);
-	post("result:", result, "\n");
-	// outlet(0, result.split(""));
+	var result = axiom;
+	if (generations > 0){
+		result = spawn(axiom);
+	}
 	outlet(0, result);
 }
 
 function spawn(a){
-	post("spawn from:", a, "\n");
 	// empty array
 	var gen = [];
 	// get rule from dictionary
 	for (var i = 0; i < a.length; i++){
+		// when part of rules
 		if (rules.contains(a[i])){
 			var r = rules.get(a[i]);
-			post("spawned:", r, "\n");
 			// concat the returned rule
 			gen = gen.concat(r);
 		} else {
-			post("spawned nothing:", a[i], "\n");
 			// if not in rules, just concatenate string
 			gen = gen.concat(a[i]);
 		}
@@ -88,10 +83,10 @@ function clear(){
 	// post("cleared rules \n");
 }
 
-function setRules(n){
+function setdict(n){
 	rules = new Dict(n);
 }
 
-function getRules(){
+function getdict(){
 	outlet(1, "dictionary", rules.name);
 }
