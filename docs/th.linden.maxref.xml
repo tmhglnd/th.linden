@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="th.linden">
+
+	<digest>
+		Generate Lindenmayer System String Expansions
+	</digest>
+
+	<description>
+		
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Timo Hoogland</metadata>
+		<metadata name="tag">thModules</metadata>
+		<metadata name="tag">max</metadata>
+		<metadata name="tag">algorithm</metadata>
+		<metadata name="tag">composition</metadata>
+		<metadata name="tag">list</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="int">
+			<digest></digest>
+			<description></description>
+		</inlet>
+		<inlet id="1" type="int">
+			<digest></digest>
+			<description></description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="message">
+			<digest></digest>
+			<description></description>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<!-- <objarglist>
+		<objarg name="threshold" optional="1" type="float">
+			<digest>
+			</digest>
+			<description>
+			</description>
+		</objarg>
+	</objarglist> -->
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="signal">
+			<arglist>
+				<arg name="signal" optional="0" type="signal" />
+			</arglist>
+			<digest>
+				Function depends on inlet.
+			</digest>
+			<description>
+				Inlet 0:
+				<br />
+				<br />
+				Inlet 1:
+			</description>
+		</method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+		<attribute name="thresh" get='0' set='1' type='float' size='2'>
+			<digest>
+			</digest>
+			<description>
+				<br />
+				<br />
+			</description>
+		</attribute>
+	</attributelist>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="th.euclid"/>
+		<seealso name="th.fibonacci"/>
+		<seealso name="th.pell"/>
+		<seealso name="th.3bonacci"/>
+		<seealso name="jit.linden"/>
+		<seealso name="jit.conway"/>
+		<seealso name="js"/>
+	</seealsolist>
+</c74object>
