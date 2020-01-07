@@ -35,7 +35,11 @@
 
 	<!--OUTLETS-->
 	<outletlist>
-		<outlet id="0" type="message">
+		<outlet id="0" type="list">
+			<digest></digest>
+			<description></description>
+		</outlet>
+		<outlet id="1" type="dictionary">
 			<digest></digest>
 			<description></description>
 		</outlet>

@@ -14,7 +14,9 @@ A Max-abstraction that generates Lindenmayer System string expansions based on a
 
 ## Sources used
 
--
+- [Lindenmayer System Wiki](https://en.wikipedia.org/wiki/L-system)
+
+- [Coding Train Fractal-trees](https://www.youtube.com/watch?v=E1B4UoSQMFw&t=133s)
 
 ## Install
 

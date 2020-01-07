@@ -5,6 +5,8 @@
 // Set custom rules
 // Set axiom
 // Set number of generations to generate
+//
+// written by Timo Hoogland, www.timohoogland.com
 //====================================================================
 
 autowatch = 1;
@@ -20,13 +22,16 @@ var rules;
 
 function init(){
 	rules = new Dict(jsarguments[1]+"_rules");
-	axiom = "a";
+	axiom = 0;
 	gens = 1;
 
 	add(0, 0, 1);
 	add(1, 0);
 }
-init();
+
+function loadbang(){
+	init();
+}
 
 function linden(g, a){
 	axiom = String(a);
@@ -80,7 +85,6 @@ function remove(r){
 
 function clear(){
 	rules.clear();
-	// post("cleared rules \n");
 }
 
 function setdict(n){
