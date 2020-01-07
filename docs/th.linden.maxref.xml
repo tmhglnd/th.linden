@@ -111,7 +111,7 @@
 		</method>
 		<method name="add">
 			<arglist>
-				<arg name="remove" optional="1" type="message" />
+				<arg name="add" optional="1" type="message" />
 			</arglist>
 			<digest>
 				Add a production rule to the dictionary.
@@ -155,7 +155,7 @@
 
 	<!--ATTRIBUTES-->
 	<attributelist>
-		<attribute name="dict" get='0' set='1' type='float' size='2'>
+		<attribute name="dict" get='0' set='1' type='symbol' size='1'>
 			<digest>
 				Set a dictionary name to refer to as production rules.
 			</digest>

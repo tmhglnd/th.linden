@@ -1026,7 +1026,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 657.0, 632.0 ],
+						"rect" : [ 100.0, 126.0, 657.0, 632.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2244,7 +2244,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 144.5, 120.0, 181.0, 47.0 ],
-									"text" : "variables : 0 1\naxiom : 0\nrules : (0 → 0 1 0), (1 → 1 1 1)"
+									"text" : "variables : 0 1\naxiom : 0\nrules : (0 → 1 0 0), (1 → 1 0 1 1)"
 								}
 
 							}
@@ -3393,7 +3393,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 657.0, 632.0 ],
+						"rect" : [ 0.0, 26.0, 657.0, 632.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
