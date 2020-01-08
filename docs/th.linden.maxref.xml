@@ -165,6 +165,19 @@
 				<br />
 			</description>
 		</attribute>
+		<attribute name="ignore_ws" get='0' set='1' type='int' size='1'>
+			<digest>
+				Ignore the whitespace in the rules and check every character individually.
+			</digest>
+			<description>
+				Ignore the whitespace in the rules and check every character individually. Useful when working with (special-)characters instead of rules only containing integer values. For example the Koch Curve: (F > F+F-F-F+F)
+				<br />
+				<br />
+				Note: this sperates integers into their individual characters as well!
+				<br />
+				<br />
+			</description>
+		</attribute>
 	</attributelist>
 
 	<!--SEEALSO-->

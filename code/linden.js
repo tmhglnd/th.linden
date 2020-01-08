@@ -19,6 +19,10 @@ var axiom = "";
 var generations = 0;
 // dict with production rules
 var rules;
+// ignore whitespaces
+var no_ws = false;
+// last result
+var result;
 
 function init(){
 	rules = new Dict(jsarguments[1]+"_rules");
@@ -37,7 +41,7 @@ function linden(g, a){
 	axiom = String(a);
 	generations = g;
 
-	var result = axiom;
+	result = axiom;
 	if (generations > 0){
 		result = spawn(axiom);
 	}
@@ -45,18 +49,41 @@ function linden(g, a){
 }
 
 function spawn(a){
-	// empty array
-	var gen = [];
-	// get rule from dictionary
-	for (var i = 0; i < a.length; i++){
-		// when part of rules
-		if (rules.contains(a[i])){
-			var r = rules.get(a[i]);
-			// concat the returned rule
-			gen = gen.concat(r);
-		} else {
-			// if not in rules, just concatenate string
-			gen = gen.concat(a[i]);
+	// empty array or string
+	var gen;
+
+	if (no_ws){
+		gen = "";
+		// get rule from dictionary
+		for (var i=0; i<a.length; i++){
+			// post("spawn from:", a.charAt(i), "\n");
+			if (rules.contains(a.charAt(i))){
+				var r = rules.get(a.charAt(i));
+				// when rule is array join to string
+				if (typeof(r) === "object"){
+					r = r.join("");
+				}
+				// post("spawned:", r, "\n");
+				gen += r;
+				// post("result:", gen, "\n");
+			} else {
+				// if not in rules, just concatenate string
+				gen += a.charAt(i);
+			}
+		}
+	} else {
+		gen = [];
+		// get rule from dictionary
+		for (var i=0; i<a.length; i++){
+			// when part of rules
+			if (rules.contains(a[i])){
+				var r = rules.get(a[i]);
+				// concat the returned rule
+				gen = gen.concat(r);
+			} else {
+				// if not in rules, just concatenate string
+				gen = gen.concat(a[i]);
+			}
 		}
 	}
 	// remove 1 generation
@@ -93,4 +120,8 @@ function setdict(n){
 
 function getdict(){
 	outlet(1, "dictionary", rules.name);
+}
+
+function ignore_ws(v){
+	no_ws = (v != 0) ? true : false;
 }
