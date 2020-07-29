@@ -73,13 +73,18 @@ function spawn(a){
 		}
 	} else {
 		gen = [];
+		// check if array, else make array
+		a = (!Array.isArray(a))? [a] : a;
 		// get rule from dictionary
 		for (var i=0; i<a.length; i++){
+			// post("spawn from:", a[i], "\n");
 			// when part of rules
 			if (rules.contains(a[i])){
 				var r = rules.get(a[i]);
+				// post("spawned:", r, "\n");
 				// concat the returned rule
 				gen = gen.concat(r);
+				// post("result:", gen, "\n");
 			} else {
 				// if not in rules, just concatenate string
 				gen = gen.concat(a[i]);
